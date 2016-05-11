@@ -6,7 +6,6 @@ import com.hitherejoe.module_androidtest_only.injection.component.DaggerTestComp
 import com.hitherejoe.module_androidtest_only.injection.component.TestComponent;
 import com.hitherejoe.module_androidtest_only.injection.module.ApplicationTestModule;
 import com.hitherejoe.module_androidtest_only.util.TestDataManager;
-import com.hitherejoe.mvvm_hackernews.HackerNewsApplication;
 import com.hitherejoe.mvvm_hackernews.data.remote.HackerNewsService;
 
 import org.junit.rules.TestRule;
@@ -33,7 +32,7 @@ public class TestComponentRule implements TestRule {
     }
 
     private void setupDaggerTestComponentInApplication() {
-        HackerNewsApplication application = HackerNewsApplication
+        SweatMoneyAppApplication application = SweatMoneyAppApplication
                 .get(InstrumentationRegistry.getTargetContext());
         if (application.getComponent() instanceof TestComponent) {
             mTestComponent = (TestComponent) application.getComponent();

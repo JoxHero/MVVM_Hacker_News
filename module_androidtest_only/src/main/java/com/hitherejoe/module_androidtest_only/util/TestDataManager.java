@@ -5,7 +5,6 @@ import android.content.Context;
 import com.hitherejoe.module_androidtest_only.injection.component.DaggerDataManagerTestComponent;
 import com.hitherejoe.module_androidtest_only.injection.component.TestComponent;
 import com.hitherejoe.module_androidtest_only.injection.module.DataManagerTestModule;
-import com.hitherejoe.mvvm_hackernews.HackerNewsApplication;
 import com.hitherejoe.mvvm_hackernews.data.DataManager;
 import com.hitherejoe.mvvm_hackernews.data.remote.HackerNewsService;
 
@@ -25,7 +24,7 @@ public class TestDataManager extends DataManager {
     @Override
     protected void injectDependencies(Context context) {
         TestComponent testComponent = (TestComponent)
-                HackerNewsApplication.get(context).getComponent();
+                SweatMoneyAppApplication.get(context).getComponent();
         DaggerDataManagerTestComponent.builder()
                 .testComponent(testComponent)
                 .dataManagerTestModule(new DataManagerTestModule())

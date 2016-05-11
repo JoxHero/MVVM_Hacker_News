@@ -54,5 +54,7 @@
     <string name="dialog_neutral_button_text">Later</string>
     <string name="dialog_negative_button_text">No, thanks</string>
     <string name="dialog_positive_button_text">Rate</string>
+    <string name="ok">ok</string>
+    <string name="message_loading">请稍候，正在加载 ...</string>
 
 </resources>
