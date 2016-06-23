@@ -56,5 +56,15 @@
     <string name="dialog_positive_button_text">Rate</string>
     <string name="ok">ok</string>
     <string name="message_loading">请稍候，正在加载 ...</string>
+    <string name="title_activity_main">MainActivity</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    //Exception messages
+    <string name="exception_message_generic">应用程序错误。</string>
+    <string name="exception_message_no_connection">没有网络连接。</string>
+    <string name="exception_message_connect_timeout">网络连接超时。</string>
+    <string name="exception_message_server_error">服务器内部错误。</string>
 </resources>

@@ -66,62 +66,11 @@ public class Constants {
     }
 
     public static final class EndPoint {
-        public static final String END_POINT_SEND_SMS_SERVICE = "http://api.app2e.com";
-        public static final String END_POINT_YRATE_SERVICE = "http://jyw.zlw.com/";
-        public final static String END_POINT_TRADE_SERVICE = "http://simtradesvc.zlw.com:8080";
-        public final static String END_POINT_MARKET_SERVICE = "http://kline1.zlw.com:8080";
-        //线上
-        public static final String END_POINT_SSO_SERVICE = "https://passport.zlw.com";
-        public static final String END_POINT_UPLOAD_SERVICE = "http://www.zlw.com/";
-        public static final String END_POINT_LOGIN_SERVICE = "http://loginservice.zlw.com:9999";
-        public final static String END_POINT_SIM_STAT_SERVICE = "http://tradestat.zlw.com:8888";
-        public final static String END_POINT_DYNAMIC_SERVICE = "http://jywfavortrade.zlw.com:8081";
-        public static final String END_POINT_ACTIVITY_SERVICE = "http://chatservice.zlw.com:9998";
-        public final static String END_POINT_ENGINE_SERVICE = "http://chatservice.zlw.com:9998";
-        public static final String END_POINT_PHONE_SERVICE = "http://mjywsvc.zlw.com:8081";
-        //线下
-        /*public static final String END_POINT_SSO_SERVICE = "http://192.168.1.109:8001";
-        public static final String END_POINT_UPLOAD_SERVICE = "http://192.168.1.109:8003";
-        public static final String END_POINT_LOGIN_SERVICE = "http://192.168.1.117:8888";
-        public final static String END_POINT_SIM_STAT_SERVICE = "http://192.168.1.227:8080";
-        public final static String END_POINT_DYNAMIC_SERVICE = "http://192.168.1.188:8888";
-        public static final String END_POINT_ACTIVITY_SERVICE = "http://192.168.1.188:8888";
-        public final static String END_POINT_ENGINE_SERVICE = "http://192.168.1.117:8888";
-        public static final String END_POINT_PHONE_SERVICE = "http://192.168.1.187:8888";
-        public final static String END_POINT_SIM_TRADE_SERVICE = "http://192.168.1.227:8888";*/
+
+        public static final String END_POINT_GANK_IO_SERVICE = "http://gank.io/api/";
+
     }
 
-    /*
-    //线上地址
-//#define HOST_REGISTERED_RENAME @"passport.zlw.com"
-//#define URL_STRATE_ENG_SVC     @"http://chatservice.zlw.com:9998/axis2/services/StrategyEngine.StrategyEngineHttpSoap11Endpoint/"
-//#define URL_DYNAMIC_SERVICE  @"http://jywfavortrade.zlw.com:8081/axis2/services/DynamicServices.DynamicServicesHttpSoap11Endpoint/"
-//#define URL_SIM_STAT     @"http://tradestat.zlw.com:8888/axis2/services/SimStat.SimStatHttpSoap11Endpoint/"
-//#define URL_PHONE_SERVICE  @"http://mjywsvc.zlw.com:8081/axis2/services/PhoneServices.PhoneServicesHttpSoap11Endpoint/"
-//#define URL_ACTIVITY  @"http://chatservice.zlw.com:9998/axis2/services/Activity.ActivityHttpSoap11Endpoint/"
-//#define URL_LOGIN  @"http://loginservice.zlw.com:9999/axis2/services/ZLBLogin.ZLBLoginHttpSoap11Endpoint/"
-//线上地址
-
-//内网地址
-#define HOST_REGISTERED_RENAME @"192.168.1.109:8001"
-#define URL_STRATE_ENG_SVC     @"http://192.168.1.117:8888/axis2/services/StrategyEngine.StrategyEngineHttpSoap11Endpoint/"
-#define URL_DYNAMIC_SERVICE  @"http://192.168.1.188:8888/axis2/services/DynamicServices.DynamicServicesHttpSoap11Endpoint/"
-#define URL_SIM_STAT     @"http://192.168.1.227:8080/axis2/services/SimStat.SimStatHttpSoap11Endpoint/"
-#define URL_PHONE_SERVICE  @"http://192.168.1.187:8888/axis2/services/PhoneServices.PhoneServicesHttpSoap11Endpoint/"
-#define URL_ACTIVITY  @"http://192.168.1.188:8888/axis2/services/Activity.ActivityHttpSoap11Endpoint/"
-#define URL_LOGIN  @"http://192.168.1.117:8888/axis2/services/ZLBLogin.ZLBLoginHttpSoap11Endpoint/"
-     */
-
-    public static final class NameSpace {
-
-        public static final String NAMESPACE_LOGIN = "http://webservices.login.common.zlb.com";
-        public static final String NAMESPACE_TRADE = "http://webservices.trade.strategy.zlb.com";
-        public static final String NAMESPACE_STAT = "http://webservices.stat.strategy.zlb.com";
-        public static final String NAMESPACE_ACTIVITY = "http://webservices.activity.common.zlb.com";
-        public final static String NAMESPACE_ENGINE = "http://webservices.engine.strategy.zlb.com";
-        public static final String NAMESPACE_DYNAMIC = "http://webservices.dynamic.zlb.com";
-        public static final String NAMESPACE_PHONE = "http://webservices.phone.zlb.com";
-    }
 
     public static final class Argument {
         public static final String URL = "url";

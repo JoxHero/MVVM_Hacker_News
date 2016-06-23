@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+apply plugin: 'com.android.library'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+    }
+
+    compileOptions {
+        sourceCompatibility globalConfiguration.getAt("javaSourceCompatibility")
+        targetCompatibility globalConfiguration.getAt("javaTargetCompatibility")
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage'  // Some libraries have issues with this
+        disable 'OldTargetApi'
+        // Due to Robolectric that modifies the manifest when running tests
+    }
+}
+
+dependencies {
+    provided "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
+    compile "com.google.dagger:dagger:${rootProject.ext.daggerVersion}"
+    compile "io.reactivex:rxjava:${rootProject.ext.rxJavaVersion}"
+    compile "javax.annotation:javax.annotation-api:${rootProject.ext.javaxAnnotationVersion}"
+    compile "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
+
+    testCompile "junit:junit:${rootProject.ext.jUnitVersion}"
+    testCompile "org.mockito:mockito-core:${rootProject.ext.mockitoVersion}"
+}

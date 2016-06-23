@@ -1,0 +1,77 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.1.0'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+    }
+
+    compileOptions {
+        sourceCompatibility globalConfiguration.getAt("javaSourceCompatibility")
+        targetCompatibility globalConfiguration.getAt("javaTargetCompatibility")
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage'  // Some libraries have issues with this
+        disable 'OldTargetApi'
+        // Due to Robolectric that modifies the manifest when running tests
+    }
+}
+
+dependencies {
+    compile project(':common')
+    compile project(':domain')
+
+    compile "io.reactivex:rxandroid:${rootProject.ext.rxAndroidVersion}"
+    provided "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
+    compile "com.google.dagger:dagger:${rootProject.ext.daggerVersion}"
+    compile "javax.annotation:javax.annotation-api:${rootProject.ext.javaxAnnotationVersion}"
+    compile "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
+    compile "com.squareup.okhttp:okhttp:${rootProject.ext.okHttpVersion}"
+    compile "com.squareup.okhttp:logging-interceptor:${rootProject.ext.loggingInterceptor}"
+    compile "com.squareup.retrofit:retrofit:${rootProject.ext.retrofitVersion}"
+    compile "com.squareup.retrofit:adapter-rxjava:${rootProject.ext.retrofitVersion}"
+    compile "com.squareup.retrofit:converter-gson:${rootProject.ext.retrofitVersion}"
+    compile "com.squareup.picasso:picasso:${rootProject.ext.picassoVersion}"
+    compile "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
+    compile "com.android.support:support-annotations:${rootProject.ext.supportAnnotations}"
+   /* compile "com.google.code.ksoap2-android:ksoap2-android:${rootProject.ext.ksoapVersion}"
+    compile "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${rootProject.ext.mqttVersion}"*/
+
+    testCompile "junit:junit:${rootProject.ext.jUnitVersion}"
+    testCompile "org.assertj:assertj-core:${rootProject.ext.assertJVersion}"
+    testCompile "org.mockito:mockito-core:${rootProject.ext.mockitoVersion}"
+    testCompile "org.robolectric:robolectric:${rootProject.ext.robolectricVersion}"
+}
